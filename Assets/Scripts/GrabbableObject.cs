@@ -75,6 +75,7 @@ public class GrabbableObject : MonoBehaviour
         isHeld = true;
         isSet = false;
         rb.useGravity = false;
+        rb.velocity = Vector3.zero;
     }
 
     public void Released()
@@ -97,5 +98,6 @@ public class GrabbableObject : MonoBehaviour
 
         isSet = true;
         isReturning = false;
+        rb.velocity = Vector3.zero;
     }
 }

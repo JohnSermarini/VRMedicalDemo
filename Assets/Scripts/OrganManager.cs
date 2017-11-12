@@ -92,7 +92,7 @@ public class OrganManager
                 return brain;
             case "Heart":
                 return heart;
-            case "Kidney":
+            case "Kidneys":
                 return kidneys;
             case "Lungs":
                 return lungs;
