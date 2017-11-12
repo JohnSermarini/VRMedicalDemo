@@ -11,7 +11,8 @@ public class HandScript : MonoBehaviour
 
     private GameObject infoPanel;
     private Vector3 panelOffset;
-    private float offset = 1.5f;
+    private float xOffset = 1.75f;
+    private float yOffset = 0.5f;
 
     public bool isLeftHand;
     private bool isHoldingObject;
@@ -80,12 +81,12 @@ public class HandScript : MonoBehaviour
         if(isLeftHand)
         {
             infoPanel = GameObject.Find("LeftInfoPanels");
-            panelOffset = new Vector3(-offset, 0f, 0f);
+            panelOffset = new Vector3(-xOffset, yOffset, 0f);
         }
         else
         {
             infoPanel = GameObject.Find("RightInfoPanels");
-            panelOffset = new Vector3(offset, 0f, 0f);
+            panelOffset = new Vector3(xOffset, yOffset, 0f);
         }
 
         isHoldingObject = false;

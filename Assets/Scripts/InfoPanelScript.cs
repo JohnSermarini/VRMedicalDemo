@@ -32,7 +32,7 @@ public class InfoPanelScript : MonoBehaviour
     private void Init()
     {
         om = new OrganManager();
-
+       
         backPanel = this.transform.GetChild(0).gameObject;
         namePanel = this.transform.GetChild(1).gameObject;
         weightPanel = this.transform.GetChild(2).gameObject;
@@ -50,7 +50,7 @@ public class InfoPanelScript : MonoBehaviour
     {
         Organ organ = om.GetOrgan(organName);
 
-        nameText.text = organName;
+        nameText.text = organ.name;
         weightText.text = organ.weight;
         descriptionText.text = organ.description;
         disorderPrefixText.text = organ.disorderPrefix;
@@ -60,11 +60,12 @@ public class InfoPanelScript : MonoBehaviour
         for (int i = 0; i < length; i++)
         {
             sb.Append("- " + organ.disorderList[i]);
-
             if (i != length - 1)
             {
                 sb.Append("\n");
             }
         }
+        disorderText.text = sb.ToString();
+        sb.Length = 0;
     }
 }

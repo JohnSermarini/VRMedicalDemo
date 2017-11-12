@@ -24,7 +24,7 @@ public class OrganManager
         brain = new Organ(
                     "Brain",
                     "1.5 kg",
-                    "Contains the brainstem, the cerebellum, and the cerebral cortex, which consists of the four lobes: the frontal, parietal, temporal and occipital lobe. The brain receives input from the sensory organs and sends output to the muscles, and is responsible for processing language, memory, emotion and more.",
+                    "    Contains the brainstem, the \ncerebellum, and the cerebral \ncortex, and four lobes.The brain \nreceives input from the sensory \norgans and sends output to the \nmuscles, and is responsible for \nprocessing language, memory, \nemotion and more.",
                     "Common Issues:");
         brain.AddDisorder("Alzherimer's Disease");
         brain.AddDisorder("Dementia");
@@ -37,11 +37,10 @@ public class OrganManager
         heart = new Organ(
                     "Heart",
                     "0.3 kg",
-                    "Around the size of a large fist, the heart pumps blood throughout the body via the circulatory system and supplies oxygen and nutrients to tissues, and removes carbon dioxide and other wastes. It is sectioned into four chambers, the atria (upper) and the ventricles (lower).",
+                    "Around the size of a large fist, \nthe heart pumps blood throughout \nthe body via the circulatory system, \nsupplies oxygen and nutrients \nto tissues, and removes carbon \ndioxide and other wastes. It is \nsectioned into four chambers, the \natria (upper) and the ventricles (lower).",
                     "Common Issues:");
         heart.AddDisorder("Cardiac Arrest");
         heart.AddDisorder("High Blood Pressure");
-        heart.AddDisorder("Congestive Heart Failure");
         heart.AddDisorder("Stroke");
         heart.AddDisorder("Arrhythmia");
     }
@@ -51,7 +50,7 @@ public class OrganManager
         kidneys = new Organ(
                     "Kidney",
                     "0.15 kg",
-                    "Known for their bean-like structure, these organs are responsible for keeping the composition of blood in the body balanced to support good health by filtering extra water and toxins from the blood. They are also responsible for producing waste to carry these toxins away, and for creating hormones to regulate blood pressure. Although these organs often come as a duo, the human body can function on one alone.",
+                    "Known for their bean-like structure, \nthese organs are responsible for \nkeeping the composition of blood in \nthe body balanced to support good \nhealth. They are also responsible for \nproducing waste to carry these toxins \naway, and for creating hormones to \nregulate blood pressure.",
                     "Common Issues:");
         kidneys.AddDisorder("Kidney Stones");
         kidneys.AddDisorder("Urinary Tract Infection");
@@ -64,7 +63,7 @@ public class OrganManager
         lungs = new Organ(
                     "Lungs",
                     "1.3 kg",
-                    "A crucial part of our respiratory system and waste management, the lungs are responsible for removing oxygen from the atmosphere and transferring it to the blood, where it is transported to cells. They are also responsible for the removal of carbon dioxide. The lungs are split into two sections, the right lung, and the left lung.",
+                    "A crucial part of our respiratory system \nand waste management, the lungs are \nresponsible for removing oxygen from \nthe atmosphere and transferring it to \nthe blood. They are also responsible \nfor the removal of carbon dioxide. The \nlungs are split into two sections, the \nright lung, and the left lung.",
                     "Common Issues:");
         lungs.AddDisorder("Asthma");
         lungs.AddDisorder("Pulmonary Disease");
@@ -77,7 +76,7 @@ public class OrganManager
         liver = new Organ(
                     "Liver",
                     "1.5 kg",
-                    "As it supports almost every other organ, the liver is a vital part of the human body's function. As the body's second-largest organ, it is responsible for detoxification, metabolism, hormone regulation, digestion, and more. The liver is also responsible for plasma generation.",
+                    "As it supports almost every other organ, \nthe liver is a vital part of the human \nbody's function. As the body's second-\nlargest organ, it is responsible for \ndetoxification, metabolism, hormone \nregulation, digestion, and more. The \nliver is also responsible for plasma \ngeneration.",
                     "Common Issues:");
         liver.AddDisorder("Hepatitis A, B, and C");
         liver.AddDisorder("Alcoholic Hepatitis");
