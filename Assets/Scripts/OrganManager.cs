@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class OrganManager
 {
-    public int numOrgans = 5;
-
-    private Organ brain;
-    private Organ heart;
-    private Organ kidneys;
-    private Organ lungs;
-    private Organ liver;
+    public Organ brain;
+    public Organ heart;
+    public Organ kidneys;
+    public Organ lungs;
+    public Organ liver;
 
     public OrganManager()
     {
@@ -36,66 +34,85 @@ public class OrganManager
 
     private void InitHeart()
     {
-        brain = new Organ(
+        heart = new Organ(
                     "Heart",
                     "0.3 kg",
                     "Around the size of a large fist, the heart pumps blood throughout the body via the circulatory system and supplies oxygen and nutrients to tissues, and removes carbon dioxide and other wastes. It is sectioned into four chambers, the atria (upper) and the ventricles (lower).",
                     "Common Issues:");
-        brain.AddDisorder("Cardiac Arrest");
-        brain.AddDisorder("High Blood Pressure");
-        brain.AddDisorder("Congestive Heart Failure");
-        brain.AddDisorder("Stroke");
-        brain.AddDisorder("Arrhythmia");
+        heart.AddDisorder("Cardiac Arrest");
+        heart.AddDisorder("High Blood Pressure");
+        heart.AddDisorder("Congestive Heart Failure");
+        heart.AddDisorder("Stroke");
+        heart.AddDisorder("Arrhythmia");
     }
 
     private void InitKidneys()
     {
-        brain = new Organ(
+        kidneys = new Organ(
                     "Kidney",
                     "0.15 kg",
                     "Known for their bean-like structure, these organs are responsible for keeping the composition of blood in the body balanced to support good health by filtering extra water and toxins from the blood. They are also responsible for producing waste to carry these toxins away, and for creating hormones to regulate blood pressure. Although these organs often come as a duo, the human body can function on one alone.",
                     "Common Issues:");
-        brain.AddDisorder("Kidney Stones");
-        brain.AddDisorder("Urinary Tract Infection");
-        brain.AddDisorder("Polycystic Kidney Disease");
-        brain.AddDisorder("Hematuria");
+        kidneys.AddDisorder("Kidney Stones");
+        kidneys.AddDisorder("Urinary Tract Infection");
+        kidneys.AddDisorder("Polycystic Kidney Disease");
+        kidneys.AddDisorder("Hematuria");
     }
 
     private void InitLungs()
     {
-        brain = new Organ(
+        lungs = new Organ(
                     "Lungs",
                     "1.3 kg",
                     "A crucial part of our respiratory system and waste management, the lungs are responsible for removing oxygen from the atmosphere and transferring it to the blood, where it is transported to cells. They are also responsible for the removal of carbon dioxide. The lungs are split into two sections, the right lung, and the left lung.",
                     "Common Issues:");
-        brain.AddDisorder("Asthma");
-        brain.AddDisorder("Pulmonary Disease");
-        brain.AddDisorder("Bronchitis");
-        brain.AddDisorder("Pneumonia");
+        lungs.AddDisorder("Asthma");
+        lungs.AddDisorder("Pulmonary Disease");
+        lungs.AddDisorder("Bronchitis");
+        lungs.AddDisorder("Pneumonia");
     }
 
     private void InitLiver()
     {
-        brain = new Organ(
+        liver = new Organ(
                     "Liver",
                     "1.5 kg",
                     "As it supports almost every other organ, the liver is a vital part of the human body's function. As the body's second-largest organ, it is responsible for detoxification, metabolism, hormone regulation, digestion, and more. The liver is also responsible for plasma generation.",
                     "Common Issues:");
-        brain.AddDisorder("Hepatitis A, B, and C");
-        brain.AddDisorder("Alcoholic Hepatitis");
-        brain.AddDisorder("Hemochromatosis");
-        brain.AddDisorder("Bile Duct Diseases");
+        liver.AddDisorder("Hepatitis A, B, and C");
+        liver.AddDisorder("Alcoholic Hepatitis");
+        liver.AddDisorder("Hemochromatosis");
+        liver.AddDisorder("Bile Duct Diseases");
+    }
+
+    public Organ GetOrgan(string name)
+    {
+        switch(name)
+        {
+            case "Brain":
+                return brain;
+            case "Heart":
+                return heart;
+            case "Kidney":
+                return kidneys;
+            case "Lungs":
+                return lungs;
+            case "Liver":
+                return liver;
+            default:
+                return brain;
+        }
     }
 
 }
 
-class Organ
+public class Organ
 {
-    private string name;
-    private string weight;
-    private string description;
-    private string disorderPrefix;
-    private ArrayList disorderList;
+    public string name;
+    public string weight;
+    public string description;
+    public string disorderPrefix;
+    public ArrayList disorderList;
 
     public Organ(string name, string weight, string description, string disorderPrefix)
     {
@@ -109,45 +126,5 @@ class Organ
     public void AddDisorder(string disorder)
     {
         disorderList.Add(disorder);
-    }
-
-    public string Name
-    {
-        get
-        {
-            return name;
-        }
-    }
-
-    public string Weight
-    {
-        get
-        {
-            return weight;
-        }
-    }
-
-    public string Description
-    {
-        get
-        {
-            return description;
-        }
-    }
-
-    public string DisorderPrefix
-    {
-        get
-        {
-            return disorderPrefix;
-        }
-    }
-
-    public ArrayList DisorderList
-    {
-        get
-        {
-            return disorderList;
-        }
     }
 }

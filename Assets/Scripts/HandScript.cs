@@ -9,6 +9,10 @@ public class HandScript : MonoBehaviour
     public GameObject pointer;
     private LineRenderer lr;
 
+    private GameObject infoPanel;
+    private Vector3 panelOffset;
+    private float offset = 1.5f;
+
     public bool isLeftHand;
     private bool isHoldingObject;
     private bool isTipInit;
@@ -41,6 +45,7 @@ public class HandScript : MonoBehaviour
                 if(!isHoldingObject)
                 {
                     isHoldingObject = true;
+                    infoPanel.GetComponent<InfoPanelScript>().UpdateInfo(hit.transform.name);
                     hit.transform.GetComponent<GrabbableObject>().Grabbed();
                     heldObject = hit.transform.gameObject;
                 }
@@ -58,6 +63,12 @@ public class HandScript : MonoBehaviour
         {
             Vector3 newPosition = fingerTip.transform.position + (ray.direction * heldDistance);
             heldObject.transform.position = newPosition;
+
+            infoPanel.transform.position = newPosition + panelOffset;
+        }
+        else
+        {
+            infoPanel.transform.position = new Vector3(500f, 500f, 500f);
         }
     }
 
@@ -65,6 +76,17 @@ public class HandScript : MonoBehaviour
     {
         ic = GameObject.Find("InputController").GetComponent<InputController>();
         lr = this.GetComponent<LineRenderer>();
+
+        if(isLeftHand)
+        {
+            infoPanel = GameObject.Find("LeftInfoPanels");
+            panelOffset = new Vector3(-offset, 0f, 0f);
+        }
+        else
+        {
+            infoPanel = GameObject.Find("RightInfoPanels");
+            panelOffset = new Vector3(offset, 0f, 0f);
+        }
 
         isHoldingObject = false;
         isTipInit = false;
