@@ -18,7 +18,7 @@ public class HandScript : MonoBehaviour
     private bool isHoldingObject;
     private bool isTipInit;
     private GameObject heldObject;
-    public float heldDistance = 3f;
+    public float heldDistance = 2f;
 
     void Start()
     {

@@ -45,6 +45,11 @@ public class InputController : MonoBehaviour
             xHeld = false;
             xFrameUp = true;
         }
+
+        if(Input.GetKeyDown("escape"))
+        {
+            Application.Quit();
+        }
 	}
 
     private void Init()
