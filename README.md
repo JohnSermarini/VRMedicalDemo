@@ -15,7 +15,7 @@ VRMedicalDemo is a medical educational tool used to allow you to interact with a
 VR Developer:
   John Sermarini
   
-Enviornment Developer:
+Environment Developer:
   John Sermarini, 
   Charlene Juvida, 
   Miguel Rubiera
